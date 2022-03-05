@@ -1,15 +1,28 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 require __DIR__. '/vendor/autoload.php';
 
-$request = new Request();
+$request = Request::createFromGlobals();
+
+$response = new Response();
 
 $pathInfo = $request->getPathInfo();
 
-if ($pathInfo === '/hello'){
-    include __DIR__. '/src/pages/hello.php';
+$map = [
+    '/hello' => 'hello.php',
+    '/bye' => 'bye.php'
+];
+
+if(isset($map[$pathInfo])){
+    include __DIR__. '/src/pages/'. $map[$pathInfo];
 }else{
-    include __DIR__.'/src/pages/bye.php';
+    $response->setContent("La page demandée n'existe pas");
+    $response->setStatusCode('404');
 }
+
+
+
+$response->send();
