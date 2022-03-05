@@ -2,12 +2,12 @@
 
 use PHPUnit\Framework\TestCase;
 
-/**
- * @runInSeparateProcess
- * @return void
- * @throws ExpectattionFailedException
- * @throws IvalidArgumentException
- */
+// /**
+//  * @runInSeparateProcess
+//  * @return void
+//  * @throws ExpectattionFailedException
+//  * @throws IvalidArgumentException
+//  */
 class IndexTest extends TestCase{
 
     public function testHello(){
