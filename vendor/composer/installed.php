@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e524f11ac5b88caef85fea32212f4fcb44ea1c83',
+        'reference' => 'ff65238406eacd5315604f1ca6acf9749d1b1eeb',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e524f11ac5b88caef85fea32212f4fcb44ea1c83',
+            'reference' => 'ff65238406eacd5315604f1ca6acf9749d1b1eeb',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(
@@ -332,6 +332,15 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
             'aliases' => array(),
             'reference' => '0abb51d2f102e00a4eefcf46ba7fec406d245825',
+            'dev_requirement' => false,
+        ),
+        'symfony/routing' => array(
+            'pretty_version' => 'v6.0.5',
+            'version' => '6.0.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/routing',
+            'aliases' => array(),
+            'reference' => 'a738b152426ac7fcb94bdab8188264652238bef1',
             'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
