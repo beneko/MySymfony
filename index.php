@@ -1,22 +1,15 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 require __DIR__. '/vendor/autoload.php';
 
-$request = Request::createFromGlobals();
-$name = $request->query->get('name', 'World');
-// var_dump($request);
-// die();
+$request = new Request();
 
-$response = new Response();
-$response->headers->set('Content-Type', 'text/html; charset=utf-8');
-$response->setContent(sprintf('Hello %s!', htmlspecialchars($name, ENT_QUOTES)));
-$response->send();
+$pathInfo = $request->getPathInfo();
 
-// $name = isset($_GET['name']) ? $_GET['name'] : 'World';
-
-// header('Content-Type: text/html; charset=utf-8');
-
-// printf('Hello %s!', htmlspecialchars($name));
+if ($pathInfo === '/hello'){
+    include __DIR__. '/src/pages/hello.php';
+}else{
+    include __DIR__.'/src/pages/bye.php';
+}
