@@ -17,7 +17,9 @@ $map = [
 ];
 
 if(isset($map[$pathInfo])){
+    ob_start();
     include __DIR__. '/src/pages/'. $map[$pathInfo];
+    $response->setContent(ob_get_clean());
 }else{
     $response->setContent("La page demandée n'existe pas");
     $response->setStatusCode('404');
